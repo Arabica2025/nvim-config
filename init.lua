@@ -29,6 +29,9 @@ vim.opt.signcolumn = "yes"
 -- Hide code-folding column
 vim.opt.foldcolumn = "0"
 
+-- terminal setup
+vim.opt.cmdheight = 2
+
 -- Install lazy.nvim automatically
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 

@@ -1,52 +1,38 @@
 # Neovim Configuration
 
-My personal Neovim configuration for development on Ubuntu WSL2, managed with lazy.nvim.
+Personal Neovim setup managed with [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 ## Features
 
-- **Plugin management:** lazy.nvim
-- **Color scheme:** Gruvbox
-- **Status line:** lualine.nvim
-- **Status column:** statuscol.nvim
+- **Completion:** blink.cmp and friendly-snippets
 - **File and text search:** fzf-lua
-- **Autocompletion:** nvim-cmp
-- **Notifications:** nvim-notify
-- **Custom commands and keymaps:** Lua-based configuration
+- **File browser:** Neo-tree
+- **Markdown preview:** Markview, including common LaTeX math
+- **PDF reading:** pdfreader.nvim (rendering requires Kitty or Ghostty)
+- **Obsidian integration:** obsidian.nvim
+- **Diagnostics:** Trouble and nvim-lspconfig
+- **Theme and status UI:** Molokai, lualine.nvim, statuscol.nvim, and nvim-notify
+- **Custom command:** `:Fzf searchf`, `:Fzf searchtxt`, or `:Fzf buffers`
+- **Guidebooks:** `:Guidebook` opens the English guide; `:GuidebookKo` opens the Korean guide
 
-## Installation
+## Requirements
 
-### Prerequisites
-
-- Neovim (compatible with installed plugins)
+- Neovim
 - Git
-- fzf
-- ripgrep
-- fd
+- `fzf`, `ripgrep`, and `fd` for fzf-lua features
+- Kitty or Ghostty for rendered PDF pages
+- Tree-sitter CLI for compiling parsers with the current nvim-treesitter setup
 
-### Setup
+## Setup
 
-Clone this repository into the Neovim configuration directory:
+Clone the repository into Neovim's configuration directory and start Neovim. The
+configuration bootstraps lazy.nvim; use `:Lazy sync` to install and synchronize
+plugins.
 
-```bash
-git clone https://github.com/YOUR_USERNAME/nvim-config.git ~/.config/nvim
-```
+## Structure
 
-Start Neovim:
-
-```bash
-nvim
-```
-
-The lazy.nvim bootstrap configuration will install the plugin manager if it is missing. Run `:Lazy sync` to install and synchronize plugins.
-
-## Configuration Structure
-
-- `init.lua` — Main configuration entry point
-- `lua/plugins/` — Individual plugin configurations
-- `lua/config/` — Custom commands, keymaps, and editor options
+- `init.lua` — Neovim options and plugin-manager bootstrap
+- `lua/plugins/` — Plugin specifications
+- `lua/config/` — Custom commands
 - `lazy-lock.json` — Locked plugin versions
-
-## License
-
-Personal configuration. See repository license if added.
-
+- `GUIDEBOOK.md` and `GUIDEBOOK_KO.md` — English and Korean usage guides

@@ -5,7 +5,13 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
 
-    opts = {},
+    opts = {
+        defaults = {
+            file_icons = true,
+            color_icons = true,
+            git_icons = true,
+        },
+    },
 
     keys = {
         {
