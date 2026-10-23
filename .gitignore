@@ -1,0 +1,12 @@
+# Neovim temporary files
+*.swp
+*.swo
+*~
+*.bak
+
+# OS-specific files
+.DS_Store
+
+# Local secrets
+.env
+.env.*
