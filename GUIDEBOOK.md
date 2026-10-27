@@ -24,8 +24,8 @@ The leader key is **Space**. For example, `<leader>e` means press Space, then `e
 
 ### Completion
 
-- In insert mode, Blink shows completion suggestions as you type.
-- Use Up/Down to move through suggestions, `Ctrl-y` to accept, `Ctrl-e` to dismiss, and `Ctrl-Space` to open the menu.
+- In insert mode, Blink shows completion suggestions as you type. Press `Tab` to select the first suggestion, then press `Tab` again to move down the list. The selected suggestion is inserted as a preview.
+- Press `Space` to accept the selected suggestion and insert a space after it. Use Up/Down to move through suggestions, `Ctrl-y` to accept without adding a space, `Ctrl-e` to dismiss, and `Ctrl-Space` to open the menu.
 - On the command line, type `:` and use Up/Down to select a suggestion; Enter accepts and runs it. `/` and `?` offer buffer text suggestions.
 - `friendly-snippets` supplies snippet suggestions to Blink.
 

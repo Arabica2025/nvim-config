@@ -5,9 +5,31 @@ return {
         "rafamadriz/friendly-snippets",
     },
     opts = {
-        keymap = { preset = "default" },
+        keymap = {
+            preset = "default",
+            ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+            ["<Space>"] = {
+                function(cmp)
+                    if cmp.is_menu_visible() and cmp.get_selected_item() then
+                        return cmp.accept({
+                            callback = function()
+                                vim.api.nvim_feedkeys(" ", "n", false)
+                            end,
+                        })
+                    end
+                    return false
+                end,
+                "fallback",
+            },
+        },
         completion = {
             documentation = { auto_show = true },
+            list = {
+                selection = {
+                    preselect = false,
+                    auto_insert = true,
+                },
+            },
         },
         sources = {
             default = { "lsp", "path", "snippets", "buffer" },
