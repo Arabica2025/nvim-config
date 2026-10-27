@@ -105,6 +105,13 @@ No language servers are selected in this config yet. Use `:Mason` to install one
 - `Ctrl-w h/j/k/l` moves between split windows; `Ctrl-w c` closes the current split.
 - `:tabnew` creates a tab page; `gt` and `gT` move between tab pages; `:tabclose` closes the current tab page.
 
+### Terminal
+
+- `:terminal` opens Neovim's built-in terminal.
+- `:belowright split | terminal` opens it in a horizontal split below the current window.
+- In terminal mode, press `Ctrl-\\` then `Ctrl-n` to return to Normal mode. Use `:q` to close the terminal window, or type `exit` in the terminal to end its shell.
+- To resize the terminal split, return to Normal mode and use `Ctrl-w +` / `Ctrl-w -` for height or `Ctrl-w >` / `Ctrl-w <` for width.
+
 ### Editing and searching
 
 - `:write` or `:w` saves; `:quit` or `:q` closes; `:wq` saves and closes; `:q!` closes without saving.
