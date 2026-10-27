@@ -38,6 +38,20 @@ return {
             enabled = true,
             keymap = {
                 preset = "cmdline",
+                ["<Tab>"] = { "select_next", "fallback" },
+                ["<Space>"] = {
+                    function(cmp)
+                        if cmp.is_menu_visible() and cmp.get_selected_item() then
+                            return cmp.accept({
+                                callback = function()
+                                    vim.api.nvim_feedkeys(" ", "n", false)
+                                end,
+                            })
+                        end
+                        return false
+                    end,
+                    "fallback",
+                },
                 ["<Up>"] = { "select_prev", "fallback" },
                 ["<Down>"] = { "select_next", "fallback" },
                 ["<CR>"] = { "accept_and_enter", "fallback" },
@@ -45,6 +59,12 @@ return {
             sources = { "cmdline", "buffer" },
             completion = {
                 menu = { auto_show = true },
+                list = {
+                    selection = {
+                        preselect = false,
+                        auto_insert = true,
+                    },
+                },
             },
         },
     },
